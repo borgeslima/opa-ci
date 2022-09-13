@@ -21,8 +21,8 @@ jobs:
       
       - name: Opa Polyce Contract.
         run: |
-          chmod +x ./check.sh
-          ./check.sh
+          chmod +x ./check-contract.sh
+          ./check-contract.sh
         shell: bash
  
         
