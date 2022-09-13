@@ -24,8 +24,10 @@ jobs:
           curl -L -o opa https://openpolicyagent.org/downloads/latest/opa_linux_amd64
           chmod u+x ./opa
           ls -lrth
-          result=`./opa eval -d standards/policies/ -i deployment.yaml data.kubernetes.admission.deny --format=pretty`
+          result=`./opa eval -d standards/policies/ -i contract.json --data=contract.rego --format=pretty`
+          
           echo "OPA eval returned : $result"
+          
           if [ "$result" != "[]" ]; then
             echo "One or more policies are violated. $result"
             exit 1
