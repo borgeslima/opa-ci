@@ -18,23 +18,13 @@ jobs:
     steps:
       
       - uses: actions/checkout@v3
- 
-      - name: Opa POlice Analysis
-        run: |       
-        
-        
-         curl -L -o opa https://openpolicyagent.org/downloads/latest/opa_linux_amd64
-         
-         chmod 755 ./opa
-         
-         result = `./opa eval --format pretty --fail-defined --input contract.json --data contract.rego 'data.openapi.police.erros'`
-
-         if [ "$result" != "[]" ]; then
-              echo "One or more policies are violated: $result"
-
-         fi
-         
+      
+      - name: Opa Polyce Contract.
+        run: |
+          chmod +x ./check.sh
+          ./check.sh
         shell: bash
+ 
         
          
          
