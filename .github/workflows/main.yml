@@ -21,8 +21,13 @@ jobs:
       
       - name: Check Contract Polices.
         run: |
+<<<<<<< HEAD
           chmod +x ./contract-polices.sh
           ./contract-polices.sh
+=======
+          chmod +x ./check-contract.sh
+          ./check-contract.sh
+>>>>>>> refs/remotes/origin/master
         shell: bash
  
         
