@@ -11,7 +11,7 @@ on:
 
 jobs:
   
-  CHECK_CONTRACT_PATTERN:
+  CHECK_CONTRACT_POLICE:
     name: CHECK CONTRACT POLICE
 
     runs-on: ubuntu-latest
@@ -27,11 +27,11 @@ jobs:
         shell: bash
 
 
-  CHECK_KUBERNETES_ADMISSION:
-    name: CHECK KUBERNETES ADMISSION
+  CHECK_KUBERNETES_POLICE:
+    name: CHECK KUBERNETES POLICE
     runs-on: ubuntu-latest
     needs:
-      -  CHECK_CONTRACT_PATTERN
+      -  CHECK_CONTRACT_POLICE
     steps:
 
       - uses: actions/checkout@v3
