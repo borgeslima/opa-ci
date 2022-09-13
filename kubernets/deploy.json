@@ -1,0 +1,61 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "ms-pix",
+    "labels": {
+      "app": "ms-payments",
+      "tier":"PIX"
+    }
+  },
+  "spec": {
+    "replicas": 2,
+    "selector": {
+      "matchLabels": {
+        "app": "ms-pix"
+      }
+    },
+    "strategy": {
+      "rollingUpdate": {
+        "maxSurge": 1,
+        "maxUnavailable": 1
+      }
+    },
+    "minReadySeconds": 5,
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "ms-pix"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "ms-pix",
+            "image": "docker.io/ms-pix:lts",
+            "imagePullPolicy": "Always",
+            "securityContext": {
+              "privileged": true
+            },
+            "ports": [
+              {
+                "name": "http",
+                "containerPort": 8088
+              }
+            ],
+            "resources": {
+              "requests": {
+                "cpu": "100m",
+                "memory": "100m"
+              },
+              "limits": {
+                "cpu": "100m",
+                "memory": "100m"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
