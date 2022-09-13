@@ -4,25 +4,25 @@ import future.keywords.if
 
 errors[reason] {
 	not input.openapi == "3.0.3"
-	reason := "Versão não pode ser superior a 3.0.1!"
+	reason := "[REF01] - Versão não pode ser superior a 3.0.1! - https://confluence.bv.net/REF01"
 }
 
 errors[reason] {
 	not input.info.title
-	reason := "Informação de tilulo não informado!"
+	reason := "[REF02] - Versão não pode ser superior a 3.0.1! - https://confluence.bv.net/REF02"
 }
 
 errors[reason] {
 	not input.info.description
-	reason := "Informação de descrição não informado!"
+	reason := "[REF03] - Versão não pode ser superior a 3.0.1! - https://confluence.bv.net/REF03!"
 }
 
 errors[reason] {
 	not input.info.license.name
-	reason := "Informação de licença não informado!"
+	reason := "[REF04] - Versão não pode ser superior a 3.0.1! - https://confluence.bv.net/REF04!"
 }
 
 errors[reason] {
 	not input.info.version
-	reason := "Informação de versão não informado!"
+	reason := "[REF05] - Versão não pode ser superior a 3.0.1! - https://confluence.bv.net/REF05!"
 }
