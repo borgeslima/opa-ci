@@ -31,3 +31,11 @@ jobs:
         run: |
 
          chmod 755 ./opa
+         
+      - name: Chmod OPa
+        run: |       
+          result=`./opa eval --format pretty --fail-defined --input contract.json --data contract.rego 'data.openapi.police.erros'`
+          
+          echo $result
+          
+         
