@@ -28,7 +28,4 @@ jobs:
           
           echo "OPA eval returned : $result"
           
-          if [ "$result" != "[]" ]; then
-            echo "One or more policies are violated. $result"
-            exit 1
-          fi
+
