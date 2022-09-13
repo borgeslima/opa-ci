@@ -21,11 +21,17 @@ jobs:
       
       - name: Evaluate standards with OPA
         run: |
-          curl -L -o opa https://openpolicyagent.org/downloads/latest/opa_linux_amd64
-          chmod u+x ./opa
-          ls -lrth
-          result=`./opa eval --format pretty --fail-defined --input contract.json --data ci.rego 'data.openapi.police.erros'`
-          
-          echo "OPA eval returned : $result"
-          
+        
+         curl -L -o opa \
+         https://openpolicyagent.org/downloads/v0.44.0/opa_linux_amd64; \
+         chmod 755 ./opa
 
+          
+          # result=`./opa eval --format pretty --fail-defined --input contract.json --data ci.rego 'data.openapi.police.erros'`
+          
+          # echo "OPA eval returned : $result"
+          
+         #  if [ "$result" != "[]" ]; then
+         #    echo "One or more policies are violated. $result"
+         #    exit 1
+         #  fi
