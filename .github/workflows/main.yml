@@ -24,12 +24,11 @@ jobs:
         
           curl -L -o opa https://openpolicyagent.org/downloads/latest/opa_linux_amd64
           chmod u+x ./opa
+         
           
+          result=`./opa eval --format pretty --fail-defined --input contract.json --data contract.rego 'data.openapi.police.erros'`
           
-          
-          # result=`./opa eval --format pretty --fail-defined --input contract.json --data ci.rego 'data.openapi.police.erros'`
-          
-          # echo "OPA eval returned : $result"
+          echo "OPA eval returned : $result"
           
          #  if [ "$result" != "[]" ]; then
          #    echo "One or more policies are violated. $result"
