@@ -2,9 +2,10 @@ curl -L -o opa https://openpolicyagent.org/downloads/latest/opa_linux_amd64
 
 chmod 755 ./opa
 
-declare result=`./opa eval --format pretty --fail-defined --input contract.json --data contract.rego 'data.openapi.police.erros'`
 
-if [ "$result" != "[]" ]; then
-     echo "One or more policies are violated: $result"
+declare admission_result=`./opa eval --format pretty --fail-defined --input ./kubernetes/deploy.json --data ./kubernetes/admission.rego 'data.kubernetes.admission.errors'`
+
+if [ "$admission_result" != "[]" ]; then
+     echo "One or more policies are violated: $admission_result"
      exit 1
 fi
