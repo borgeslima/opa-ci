@@ -14,8 +14,7 @@ chmod 755 ./opa
 
 #======================================================================================================
 
-
-declare result=`./opa eval --format pretty --fail-defined --input ./contract/contract.json --data ./contract/contract.rego 'data.openapi.police.errors'`
+declare result=`./opa eval --format pretty --fail-defined --input ./contract/contract.json --data https://raw.githubusercontent.com/borgesarch/opa-ci-polices/master/polices/contracts/P002-contracts.rego 'data.openapi.police.errors'`
 
 BREAK=$'\n'
 message=""
