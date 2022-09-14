@@ -4,8 +4,7 @@
   "metadata": {
     "name": "ms-pix",
     "labels": {
-      "app": "ms-payments",
-      "tier": "PIX"
+      "app": "ms-payments"
     }
   },
   "spec": {
