@@ -22,8 +22,8 @@ jobs:
       
       - name: Check Contract Polices.
         run: |
-          chmod +x ./contract-polices.sh
-          ./contract-polices.sh
+          chmod +x ./contract.sh
+          ./contract.sh
         shell: bash
 
 
@@ -38,8 +38,8 @@ jobs:
 
       - name: Check Contract Polices.
         run: |
-          chmod +x ./contract-polices.sh
-          ./contract-polices.sh
+          chmod +x ./contract.sh
+          ./contract.sh
         shell: bash
          
          
