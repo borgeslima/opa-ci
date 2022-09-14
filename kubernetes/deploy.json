@@ -45,11 +45,12 @@
             ],
             "resources": {
               "requests": {
-                "cpu": "100m"
+                "cpu": "100m",
+                "memory": "100m"
               },
               "limits": {
                 "cpu": "100m",
-                "memory": "100m"
+                
               }
             }
           }
