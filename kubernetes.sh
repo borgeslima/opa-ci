@@ -17,7 +17,7 @@ chmod 755 ./opa
 BREAK=$'\n'
 message=""
 
-declare admission_result=`./opa eval --format pretty --fail-defined --input ./kubernetes/deploy.json --data ./kubernetes/admission.rego 'data.kubernetes.admission.errors'`
+declare admission_result=`./opa eval --format pretty --fail-defined --input ./kubernetes/deploy.json --data https://raw.githubusercontent.com/borgesarch/opa-ci-polices/master/polices/kubernetes/P001-kubernetes.rego 'data.kubernetes.admission.errors'`
 
 
 for ROW in $(echo "${admission_result}" | jq -r '.[]'); do
