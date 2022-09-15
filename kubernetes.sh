@@ -60,7 +60,7 @@ if [ "$result" != "[]" ]; then
              ""\"issuetype""\": {
                  ""\"id""\": ""\"11395""\"
              },
-             ""\"summary""\": ""\"[OPA]- Pipeline error""\",
+             ""\"summary""\": ""\"[OPA] - [TIER-PIX] - Pipeline error""\",
              ""\"description""\": {
                  ""\"version""\": 1,
                  ""\"type""\": ""\"doc""\",
