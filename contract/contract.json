@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.3",
     "info": {
- 
+        "description":"contrato teste",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
             "email": "apiteam@swagger.io"
